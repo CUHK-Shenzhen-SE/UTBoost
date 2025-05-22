@@ -1,0 +1,23 @@
+{
+    "loc_file": "results_1/location_merged/loc_merged_0-1_outputs.jsonl",
+    "top_n": 3,
+    "loc_interval": true,
+    "context_window": 10,
+    "stop_at_n_unique_valid_samples": -1,
+    "gen_and_process": true,
+    "max_samples": 2,
+    "select_id": -1,
+    "model": "gpt-4o-2024-08-06",
+    "backend": "openai",
+    "output_folder": "results_1/repair_run_099_lm23",
+    "only_correct": false,
+    "post_process": false,
+    "add_space": false,
+    "cot": true,
+    "fine_grain_loc_only": false,
+    "diff_format": true,
+    "skip_greedy": false,
+    "sticky_scroll": false,
+    "mock": false,
+    "output_file": "results_1/repair_run_099_lm23/output.jsonl"
+}

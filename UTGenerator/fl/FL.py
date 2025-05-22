@@ -3,10 +3,10 @@ import re
 import pdb
 from abc import ABC, abstractmethod
 
-from augtest.repair.repair import construct_topn_file_context
-from augtest.util.compress_file import get_skeleton
-from augtest.util.postprocess_data import extract_code_blocks, extract_locs_for_files
-from augtest.util.preprocess_data import (
+from UTGenerator.augtest.genTest import construct_topn_file_context
+from UTGenerator.util.compress_file import get_skeleton
+from UTGenerator.util.postprocess_data import extract_code_blocks, extract_locs_for_files
+from UTGenerator.util.preprocess_data import (
     get_full_file_paths_and_classes_and_functions,
     get_repo_files,
     line_wrap_content,
@@ -269,8 +269,8 @@ Return just the locations.
 
     def localize(self, top_n=1, mock=False) -> tuple[list, list, list, any]:
         # lazy import, not sure if this is actually better?
-        from augtest.util.api_requests import num_tokens_from_messages
-        from augtest.util.model import make_model
+        from UTGenerator.util.api_requests import num_tokens_from_messages
+        from UTGenerator.util.model import make_model
 
         found_files = []
 
@@ -303,11 +303,9 @@ Return just the locations.
             temperature=0,
             batch_size=1,
         )
-        # pdb.set_trace()
         traj = model.codegen(message, num_samples=1)[0]
         traj["prompt"] = message
         raw_output = traj["response"]
-        # pdb.set_trace()
         model_found_files = self._parse_model_return_lines(raw_output)
 
         files, classes, functions = get_full_file_paths_and_classes_and_functions(
@@ -333,8 +331,8 @@ Return just the locations.
     def localize_function_for_files(
         self, file_names, mock=False
     ) -> tuple[list, dict, dict]:
-        from augtest.util.api_requests import num_tokens_from_messages
-        from augtest.util.model import make_model
+        from UTGenerator.util.api_requests import num_tokens_from_messages
+        from UTGenerator.util.model import make_model
 
         files, classes, functions = get_full_file_paths_and_classes_and_functions(
             self.structure
@@ -408,8 +406,8 @@ Return just the locations.
         return model_found_locs_separated, {"raw_output_loc": raw_output}, traj
 
     def localize_function_from_compressed_files(self, file_names, mock=False):
-        from augtest.util.api_requests import num_tokens_from_messages
-        from augtest.util.model import make_model
+        from UTGenerator.util.api_requests import num_tokens_from_messages
+        from UTGenerator.util.model import make_model
 
         file_contents = get_repo_files(self.structure, file_names)
         compressed_file_contents = {
@@ -487,8 +485,8 @@ Return just the locations.
         num_samples: int = 1,
         mock=False,
     ):
-        from augtest.util.api_requests import num_tokens_from_messages
-        from augtest.util.model import make_model
+        from UTGenerator.util.api_requests import num_tokens_from_messages
+        from UTGenerator.util.model import make_model
 
         file_contents = get_repo_files(self.structure, file_names)
         topn_content, file_loc_intervals = construct_topn_file_context(

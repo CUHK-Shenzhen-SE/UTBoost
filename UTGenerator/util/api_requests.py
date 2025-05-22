@@ -5,8 +5,13 @@ import pdb
 import openai
 import httpx
 import tiktoken
-
 import os
+
+# from dotenv import load_dotenv
+
+
+# load_dotenv()
+# os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
 
 def num_tokens_from_messages(message, model="gpt-3.5-turbo-0301"):
     """Returns the number of tokens used by a list of messages."""
@@ -62,7 +67,6 @@ def handler(signum, frame):
 def request_chatgpt_engine(config, base_url=None):
     # last version to create data
     # client = openai.OpenAI(base_url=base_url)
-    # new xiao ai api
     client = openai.OpenAI(base_url=base_url,
                            http_client=httpx.Client(
                                base_url=base_url,

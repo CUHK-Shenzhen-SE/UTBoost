@@ -1,0 +1,22 @@
+{
+    "dataset_split": "lite",
+    "output_folder": "results_1/location",
+    "output_file": "results_1/location/loc_outputs.jsonl",
+    "start_file": null,
+    "file_level": true,
+    "related_level": true,
+    "fine_grain_line_level": true,
+    "top_n": 3,
+    "temperature": 0.8,
+    "num_samples": 4,
+    "compress": true,
+    "merge": false,
+    "add_space": false,
+    "no_line_number": false,
+    "sticky_scroll": false,
+    "context_window": 10,
+    "target_id": null,
+    "mock": false,
+    "model": "gpt-4o-2024-08-06",
+    "backend": "openai"
+}

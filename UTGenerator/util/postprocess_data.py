@@ -7,7 +7,7 @@ import subprocess
 import uuid
 from collections import OrderedDict
 
-from augtest.util.preprocess_data import get_repo_files
+from UTGenerator.util.preprocess_data import get_repo_files
 from get_repo_structure.get_patch_info import parse_patch
 
 

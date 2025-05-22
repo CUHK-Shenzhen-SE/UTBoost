@@ -6,18 +6,17 @@ import logging
 import re
 import os
 from difflib import unified_diff
-os.environ['OPENAI_API_KEY'] = ''
-
+from dotenv import load_dotenv
 from datasets import load_dataset
 from tqdm import tqdm
 
-from augtest.util.api_requests import (
+from UTGenerator.util.api_requests import (
     create_chatgpt_config,
     num_tokens_from_messages,
     request_chatgpt_engine,
 )
-from augtest.util.model import make_model
-from augtest.util.postprocess_data import (
+from UTGenerator.util.model import make_model
+from UTGenerator.util.postprocess_data import (
     check_code_differ_by_just_empty_lines,
     check_syntax,
     extract_python_blocks,
@@ -28,15 +27,21 @@ from augtest.util.postprocess_data import (
     remove_empty_lines,
     split_edit_multifile_commands,
 )
-from augtest.util.preprocess_data import (
+from UTGenerator.util.preprocess_data import (
     get_full_file_paths_and_classes_and_functions,
     get_repo_structure,
     line_wrap_content,
     transfer_arb_locs_to_locs,
 )
-from augtest.util.utils import load_jsonl
+from UTGenerator.util.utils import load_jsonl
 
 import Levenshtein
+
+load_dotenv()
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("OPENAI_API_KEY not found in environment variables")
+os.environ['OPENAI_API_KEY'] = api_key
 
 def find_most_different_code_block(target_code, code_blocks):
     # find max diff

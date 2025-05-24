@@ -6,7 +6,7 @@ UTBoost is a toolkit designed to enhance the test suites in SWE-Bench, which may
 
 <img src="assets/figures/utboost.png">
 
-## Environment Setup
+## 🦜 Environment Setup
 Please setup your OPenAI API via .env.
 For UTGenerator, we recommend to create an anaconda environment with python 3.11, and install
 
@@ -29,7 +29,7 @@ git checkout 4c21a4831d80b66e976f2a5ce946a0abded7a2aa
 pip install -e .
 ```
 
-## Generating test cases
+## 💫 Generating test cases
 We have provided our generated test cases here `assets/useful_scripts/dir_generated_test_cases.zip`. `assets/useful_scripts/augTest.json` is our confirmed augmented test cases.
 
 For genrating your own augmented test cases with UTGenerator, here is the instruction: we should first locate the places for adding test cases by:
@@ -54,7 +54,7 @@ python agentless/repair/genTest.py --loc_file results_1/location_merged/loc_merg
                                   --gen_and_process 
 ```
 
-## SWE-Bench re-evaluation with augmentest test cases
+## 🌞 SWE-Bench re-evaluation with augmentest test cases
 
 You can use your favoriate way to use the generated test cases.
 For large-scale evaluation, we recommend you use the SWE-Bench evaluation pipeline by replacing the original test patch with the new generated test cases.
@@ -69,11 +69,14 @@ We think the annotations should be updated to ensure rigorous evaluation.
 We re-run the SWE-Bench data collection to gather the annotations, please check with the `update_SWE_Bench/updated_parser_test_instance_dict_verified.json`
 and `update_SWE_Bench/updated_parser_test_instance_dict.json`.
 
-## Report suspicious issues with intramorphic testing
+## ✍️ Report suspicious issues with intramorphic testing
 1. We need to run `intramorphicTesting.py` to get the report of suspicious issues (we provide example data in log4test).
 2. Then we can check if UTGenerator generate effective and harmless code, and then add them to SWE-Bench after confirmation.
 
 ## 📝 Citation
+MIT license. Check `LICENSE.md`.
+
+If you find our work helpful, please use the following citation.
 
 ```bibtex
 @article{utboost,

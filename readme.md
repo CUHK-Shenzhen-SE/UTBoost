@@ -30,8 +30,9 @@ pip install -e .
 ```
 
 ## Generating test cases
+We have provided our generated test cases here `assets/useful_scripts/dir_generated_test_cases.zip`. `assets/useful_scripts/augTest.json` is our confirmed augmented test cases.
 
-We should first locate the places for adding test cases by:
+For genrating your own augmented test cases with UTGenerator, here is the instruction: we should first locate the places for adding test cases by:
 ```
 python UTGenerator/fl/localize.py --file_level --related_level --fine_grain_line_level \
                                 --output_folder results_1/location --top_n 3 \

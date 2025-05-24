@@ -72,6 +72,15 @@ and `update_SWE_Bench/updated_parser_test_instance_dict.json`.
 ## ✍️ Report suspicious issues with intramorphic testing
 1. We need to run `intramorphicTesting.py` to get the report of suspicious issues (we provide example data in log4test).
 2. Then we can check if UTGenerator generate effective and harmless code, and then add them to SWE-Bench after confirmation.
+3. For example, we can examine the instance and the test case when gold passed and geenrated patch failed in given the follwoing report:
+```
+Report for pydata__xarray-7393 is different between gold: log4test/gold-366 and model: log4test/20231010_rag_swellama7b
+here is the differences:
+There is a difference in test cases: xarray/tests/test_indexes.py::test_restore_dtype_on_multiindexes[int32], gold: PASSED, gen: FAILED
+There is a difference in test cases: xarray/tests/test_indexes.py::test_restore_dtype_on_multiindexes[float32], gold: PASSED, gen: FAILED
+There is a difference in test cases: xarray/tests/test_indexes.py::test_multiindex_with_various_dtypes, gold: PASSED, gen: FAILED
+There is a difference in test cases: xarray/tests/test_indexes.py::test_empty_multiindex, gold: PASSED, gen: FAILED
+```
 
 ## 📝 Citation
 MIT license. Check `LICENSE.md`.
@@ -86,6 +95,10 @@ If you find our work helpful, please use the following citation.
   journal   = {arXiv preprint},
 }
 ```
+
+## 📰 QA
+For any question, feel free to pull an Github Issue or email me via duanshaoyou@gmail.com.
+
 
 ## 😻 Acknowledgement 
 

@@ -92,7 +92,7 @@ If you find our work helpful, please use the following citation.
   author    = {Yu, Boxi and Zhu, Yuxuan and He, Pinjia and Kang, Daniel},
   title     = {UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench},
   year      = {2025},
-  journal   = {arXiv preprint},
+  journal   = {The 63rd Annual Meeting of the Association for Computational Linguistics },
 }
 ```
 

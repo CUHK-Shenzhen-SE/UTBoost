@@ -88,11 +88,11 @@ MIT license. Check `LICENSE.md`.
 If you find our work helpful, please use the following citation.
 
 ```bibtex
-@article{utboost,
-  author    = {Yu, Boxi and Zhu, Yuxuan and He, Pinjia and Kang, Daniel},
-  title     = {UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench},
-  year      = {2025},
-  journal   = {The 63rd Annual Meeting of the Association for Computational Linguistics},
+@article{yu2025utboost,
+  title={UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench},
+  author={Yu, Boxi and Zhu, Yuxuan and He, Pinjia and Kang, Daniel},
+  journal={arXiv preprint arXiv:2506.09289},
+  year={2025}
 }
 ```
 

@@ -76,7 +76,7 @@ python -m swebench.harness.run_evaluation \
 
 If you want to check with more details, we refer you to create the docker container with the corresponding instance_id. We extract the setup scripts, you can find here: `assets/useful_scripts/my_class_list_lite.pkl` and `assets/useful_scripts/my_class_list_verified.pkl`
 
-## Getting the annotation with the refined parser
+## 🖊️ Getting the annotation with the refined parser
 The SWE-Bench annotation data has some labeling errors due to the defects of the original parser. For example: https://github.com/SWE-bench/SWE-bench/pull/314.
 We think the annotations should be updated to ensure rigorous evaluation.
 

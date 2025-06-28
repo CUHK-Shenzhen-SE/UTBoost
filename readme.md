@@ -33,7 +33,7 @@ pip install -e .
 We have provided our generated test cases here `assets/useful_scripts/dir_generated_test_cases.zip`. `assets/useful_scripts/augTest.json` is our confirmed augmented test cases.
 
 For genrating your own augmented test cases with UTGenerator, here is the instruction: we should first locate the places for adding test cases by:
-```
+```bash
 python UTGenerator/fl/localize.py --file_level --related_level --fine_grain_line_level \
                                 --output_folder results_1/location --top_n 3 \
                                 --compress \
@@ -46,7 +46,7 @@ python UTGenerator/fl/localize.py --merge \
                                 --num_samples 4
 ```
 Then we can run the test case generation script:
-```
+```bash
 python agentless/repair/genTest.py --loc_file results_1/location_merged/loc_merged_0-1_outputs.jsonl \
                                   --output_folder results_1/new_gen_testCase_t099_lm01 \
                                   --loc_interval --top_n=3 --context_window=10 \
@@ -54,11 +54,25 @@ python agentless/repair/genTest.py --loc_file results_1/location_merged/loc_merg
                                   --gen_and_process 
 ```
 
-## 🌞 SWE-Bench re-evaluation with augmentest test cases
+## 🌞 SWE-Bench re-evaluation with UTBoost
 
-You can use your favoriate way to use the generated test cases.
-For large-scale evaluation, we recommend you use the SWE-Bench evaluation pipeline by replacing the original test patch with the new generated test cases.
-You will need to modify the `SWE-bench/swebench/harness/test_spec.py`. We give an example in `update_SWE_Bench/log_parsers.py`.
+You can use your favorite way to use UTBoost.
+We have uploaded UTBoost to HuggingFace; you can access the data:
+```python
+from datasets import load_dataset
+swebench = load_dataset('Bertsekas/SWE-Bench_Lite_UTBoost', split='test')
+```
+
+To evaluate your coding agent on UTBoost, you can replace the SWE-Bench dataset with the UTBoost one. Here is an example for using SWE-bench_Lite_UTBoost in SWE-Bench evaluation pipeline https://github.com/SWE-bench:
+```bash
+python -m swebench.harness.run_evaluation \
+    --dataset_name Bertsekas/SWE-Bench_Lite_UTBoost \
+    --predictions_path <path_to_predictions> \
+    --max_workers <num_workers> \
+    --run_id <run_id>
+    # use --predictions_path 'gold' to verify the gold patches
+    # use --run_id to name the evaluation run
+```
 
 If you want to check with more details, we refer you to create the docker container with the corresponding instance_id. We extract the setup scripts, you can find here: `assets/useful_scripts/my_class_list_lite.pkl` and `assets/useful_scripts/my_class_list_verified.pkl`
 

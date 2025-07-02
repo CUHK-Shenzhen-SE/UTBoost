@@ -1,5 +1,11 @@
 # UTBoost: Rigorous Evaluation of Coding Agents on SWE-Bench
 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2505.09289-b31b1b.svg)](https://arxiv.org/abs/2506.09289)
+[![🤗 HF Collection](https://img.shields.io/badge/HuggingFace-SWE--Bench_Verified_UTBoost-yellow)](https://huggingface.co/datasets/Bertsekas/SWE-Bench_Verified_UTBoost)
+[![🤗 HF Collection](https://img.shields.io/badge/HuggingFace-SWE--Bench_Lite_UTBoost-yellow)](https://huggingface.co/datasets/Bertsekas/SWE-Bench_Lite_UTBoost)
+
+
 ## 👋 Overview
 UTBoost is a toolkit designed to enhance the test suites in SWE-Bench, which may lack sufficient coverage, resulting in less rigorous evaluation of coding agents. By augmenting the original test cases with additional ones, UTBoost ensures that coding agents thoroughly resolve issues, beyond merely passing human-written tests.
 

@@ -26,8 +26,7 @@ pip install -r requirements.txt
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
 
-For SWE-Bench re-evaluation, we use the version of SWE-Bench with commit_id: 4c21a4831d80b66e976f2a5ce946a0abded7a2aa
-You can use the updated SWE-Bench evaluation pipeline by using our dataset on Hugging Face.
+For SWE-Bench re-evaluation in our paper, we use the version of SWE-Bench with commit_id: 4c21a4831d80b66e976f2a5ce946a0abded7a2aa
 
 ```shell
 git clone git@github.com:princeton-nlp/SWE-bench.git
@@ -35,6 +34,8 @@ cd SWE-bench
 git checkout 4c21a4831d80b66e976f2a5ce946a0abded7a2aa
 pip install -e .
 ```
+
+You can use the updated SWE-Bench pipeline by using our dataset on Hugging Face
 
 ## 💫 Generating test cases
 We have provided our generated test cases here `assets/useful_scripts/dir_generated_test_cases.zip`. `assets/useful_scripts/augTest.json` is our confirmed augmented test cases.

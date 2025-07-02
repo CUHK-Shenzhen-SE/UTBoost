@@ -27,6 +27,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
 
 For SWE-Bench re-evaluation, we use the version of SWE-Bench with commit_id: 4c21a4831d80b66e976f2a5ce946a0abded7a2aa
+You can use the updated SWE-Bench evaluation pipeline by using our dataset on Hugging Face.
 
 ```shell
 git clone git@github.com:princeton-nlp/SWE-bench.git

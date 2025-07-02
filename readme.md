@@ -54,13 +54,14 @@ python agentless/repair/genTest.py --loc_file results_1/location_merged/loc_merg
                                   --gen_and_process 
 ```
 
-## 🌞 SWE-Bench re-evaluation with UTBoost
+## 🤗 SWE-Bench re-evaluation with UTBoost data on Hugging Face 
 
 You can use your favorite way to use UTBoost.
 We have uploaded UTBoost to HuggingFace; you can access the data:
 ```python
 from datasets import load_dataset
 swebench = load_dataset('Bertsekas/SWE-Bench_Lite_UTBoost', split='test')
+# for verified split, use Bertsekas/SWE-Bench_Verified_UTBoost
 ```
 
 To evaluate your coding agent on UTBoost, you can replace the SWE-Bench dataset with the UTBoost one. Here is an example for using SWE-bench_Lite_UTBoost in SWE-Bench evaluation pipeline https://github.com/SWE-bench:

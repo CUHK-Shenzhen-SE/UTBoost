@@ -87,7 +87,7 @@ If you want to check with more details, we refer you to create the docker contai
 
 ## 🖊️ Getting the annotation with the refined parser
 The SWE-Bench annotation data has some labeling errors due to the defects of the original parser. For example: https://github.com/SWE-bench/SWE-bench/pull/314.
-We think the annotations should be updated to ensure rigorous evaluation.
+We think the annotations should be updated to ensure rigorous evaluation. You can find our refined parser here: `update_SWE_Bench/log_parsers.py`.
 
 We re-run the SWE-Bench data collection to gather the annotations, please check with the `update_SWE_Bench/updated_parser_test_instance_dict_verified.json`
 and `update_SWE_Bench/updated_parser_test_instance_dict.json`.
